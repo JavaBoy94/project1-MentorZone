@@ -96,6 +96,7 @@ public class AdminController {
         return "redirect:/admin/memberList";
     }
 
+//    회원상세
     @GetMapping("/memberDetail/{id}")
     public String memberDetail(@PathVariable(value = "id") Long id, Model model) {
         MemberDto memberDto = memberService.memberDetailDo(id);
