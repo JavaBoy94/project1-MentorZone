@@ -208,15 +208,99 @@ let setIn = setInterval(autoGallery,3000);
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931082-9a431c7b-90bb-46a4-8295-9724ce6dbb60.png" style="width: 700px"></p> 
 <br>
-  <p align="center"></p>
+  <p align="center">회원의 권한(role)이 관리자(ADMIN)일 때만 관리자페이지 버튼이 활성화되도록 설정하였습니다.</p>
+  
+  ```html
+    <li sec:authorize="hasRole('ADMIN')">
+        <a th:href="@{/admin}">
+            <img th:src="@{/img/icon/admin.png}" alt="admin">
+            <span>Admin</span>
+        </a>
+    </li>
+  ```
+  
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931085-470763ad-3123-4f56-962a-ef5123cca064.png" style="width: 700px"></p>
 <br>
-  <p align="center"></p>
+  <p align="center">관리자페이지(/admin)의 URI 접근권한을 주입된 SecurityFilterChain 를 통해 관리자(ADMIN)로 설정하였습니다.</p>
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931087-11c4993a-7e01-4ee6-b9da-04aec28eb9ef.png" style="width: 700px"></p>
 <br>
-  <p align="center"></p>
+  <p align="center">회원관리 페이지에선 전체 회원의 목록을 Page객체를 통해 불러오고, 회원검색을 위한 검색기능도 추가하였습니다.</p>
+  
+  ```java
+@Controller
+@RequestMapping("/admin")
+@RequiredArgsConstructor
+public class AdminController {
+
+    private final MemberService memberService;
+    private final WishService wishService;
+    private final ProductService productService;
+    private final OrderlistService orderlistService;
+
+    @GetMapping({"", "/"})
+    public String admin() {
+        return "admin/admin";
+    }
+
+    //  회원목록  
+    @GetMapping("/memberList")
+    public String memberList(Model model, @PageableDefault(page = 0, size = 10, sort = "userId", direction = Sort.Direction.DESC)
+    Pageable pageable,
+                             @RequestParam(value = "type", required = false) String type,
+                             @RequestParam(value = "keyword", required = false) String keyword) {
+
+        int blockNum;
+        int nowPage;
+        int startPage;
+        int endPage;
+
+        System.out.println(type);
+        System.out.println(keyword);
+
+        Page<MemberDto> memberDtoList;
+
+        if (type != null && keyword != null) {
+            if (type.equals("id")) {
+//            회원번호(ID)로 검색할 경우
+                Long userId = Long.parseLong(keyword);
+//                System.out.println(userId+"<<");
+                memberDtoList = memberService.searchMemberDo(userId, pageable);
+            } else {
+                memberDtoList = memberService.searchListDo(type, keyword, pageable);
+            }
+        } else {
+            memberDtoList = memberService.selectMembers(pageable);
+        }
+
+
+        blockNum = 4;
+        nowPage = memberDtoList.getNumber() + 1;
+        startPage = Math.max(1, memberDtoList.getNumber() - blockNum);
+        endPage = memberDtoList.getTotalPages();
+
+        model.addAttribute("nowPage", nowPage);
+        model.addAttribute("startPage", startPage);
+        model.addAttribute("endPage", endPage);
+        model.addAttribute("memberDtoList", memberDtoList);
+
+        return "admin/adminMemberList";
+    }
+
+    //  회원검색
+    @GetMapping("/memberSearch")
+    public String memberSearch(@RequestParam(value = "type", required = false) String type,
+                               @RequestParam(value = "keyword", required = false) String keyword,
+                                RedirectAttributes redirectAttributes) {
+
+        redirectAttributes.addAttribute("type",type);
+        redirectAttributes.addAttribute("keyword",keyword);
+
+        return "redirect:/admin/memberList";
+    }
+  ```
+  
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931090-b6b29221-ee2a-4d6b-9ed1-31aed79c7764.png" style="width: 700px"></p>
 <br>
