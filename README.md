@@ -59,17 +59,65 @@
 <details>
 <summary>상세보기</summary>
 <br>
-  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920393-83d926e0-aeb1-47c1-b0cf-b46e6c4f4b3b.png" style="width: 700px"></p> 
-<br>
-  <p align="center"></p>
-<br><br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920398-99017e79-96b6-4673-85c5-0c9607140e1b.png" style="width: 700px"></p> 
 <br>
-  <p align="center"></p>
+  <p align="center">header와 footer를 공통요소(fragments)로 분리한 후, 카테고리별 최신 상품 정보와 자동재생 갤러리, 챗봇 등을 구현하였습니다.</p>
 <br><br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920403-83bef557-74d4-4fd5-b879-261b350d3e53.png" style="width: 700px"></p> 
 <br>
-<p align="center"></p>
+<p align="center">카테고리별 상품 리스트를 가져온 뒤, 등록일 순으로 내림차순하여 최신 상품의 DTO를 브라우저에 노출시켰습니다.</p>
+  
+  ```java
+// ---------- MainCotroller --------------
+  
+@Controller
+@RequestMapping("/")
+@RequiredArgsConstructor
+public class MainController {
+
+    private final MemberRepository memberRepository;
+    private final ProductService productService;
+
+    @GetMapping({"","index"})
+    public String index(Model model){
+
+//  최신강의 기본 상품 표시 (it)
+
+        ProductDto productDto = new ProductDto();
+
+        List<ProductDto> productDtoList = productService.ItProductListDo("it");
+        if (productDtoList.isEmpty()){
+            productDto = null;
+        } else {
+            productDto = productDtoList.get(0);
+        }
+            model.addAttribute("productDto",productDto);
+            return "index";
+        }
+  
+ // --------- productService -------------
+  
+  // 상품 목록 상세 페이지 가져오기(It)
+    public List<ProductDto> ItProductListDo(String productType) {
+
+        List<ProductEntity> ItProductEntityList = productRepository.findByProductTypeDesc(productType);
+        List<ProductDto> ItProductDtoList = new ArrayList<>();
+
+        for(ProductEntity productEntity : ItProductEntityList){
+            ItProductDtoList.add(ProductDto.toProductDto(productEntity));
+        }
+
+
+        return ItProductDtoList;
+  
+ // --------- productRepository ----------
+  
+  // JPA의 기본 SQL메소드에 없는 쿼리는 네이티브 쿼리(@Query)를 사용
+  @Query(value = "select * from product where product_type =:type order by product_create desc",nativeQuery = true)
+    List<ProductEntity> findByProductTypeDesc(@Param("type") String productType);
+  
+  ```
+  
 <br><br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920404-c781c7f9-841e-4133-8b36-cf4771d25c51.png" style="width: 700px"></p> 
 <br>
