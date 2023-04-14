@@ -33,24 +33,24 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911826-6b80cac9-204b-4b83-bc09-93219e2d4330.png" style="width: 700px"></p> 
 <br>
 <p align="center">프로젝트 형상관리를 위한 기본 저장소를 생성합니다.</p>
-<br><br>
+<br>
 <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911827-171bd537-dcbc-4725-8649-7f353c0f51a1.png" style="width: 700px"></p>
 <br>
 <p align="center">팀원들을 collaborators 및 contributers로 지정하여 저장소에 대한 pull Request뿐만 아니라 직접적인 push, pull의 권한을 부여하였습니다.</p>
-<br><br>
+<br>
 <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911828-4e900412-9fbe-4cc9-ac49-a25946e82122.png" style="width: 700px"></p>
 <br>
 <p align="center">프로젝트 저장소를 fork하여 팀원 각자가 복사한 저장소를 통해 담당 파트별 소스코드를 업데이트할 수 있도록 합니다.</p>
-<br><br>
+<br>
 <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911830-c32ffbdf-c60f-4204-af24-1d13cc0a5b91.png" style="width: 700px"></p>
 <br>
 <p align="center">특정 파트의 코드가 업데이트 되는대로 fork 저장소에서 프로젝트 저장소에 pull Request를 보냅니다.</p>
-<br><br>
+<br>
 <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911831-d6f95fbe-349c-4390-a33f-45c187e06bb3.png" style="width: 700px"></p>
 <br>
 <p align="center">pull request의 커밋 내역을 확인하여 confirm을 통해 해당 수정사항을 프로젝트 저장소의 소스와 merge한 뒤,</p>
 <p align="center">각자의 fork 저장소에서 최신화합니다.</p>
-<br><br>
+<br>
 </details>
 
 - 데이터 모델링 및 Entity, DTO 구현
@@ -65,7 +65,8 @@
 <br><br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920403-83bef557-74d4-4fd5-b879-261b350d3e53.png" style="width: 700px"></p> 
 <br>
-<p align="center">카테고리별 상품 리스트를 가져온 뒤, 등록일 순으로 내림차순하여 최신 상품의 DTO를 브라우저에 노출시켰습니다.</p>
+<p align="center">카테고리별 상품 리스트를 가져온 뒤, 등록일 순으로 내림차순하여 최신 상품의 DTO를 브라우저에 노출시킵니다.</p>
+<br>
   
   ```java
 // ---------- MainCotroller --------------
@@ -112,7 +113,7 @@ public class MainController {
   
  // --------- productRepository ----------
   
-  // JPA의 기본 SQL메소드에 없는 쿼리는 네이티브 쿼리(@Query)를 사용
+  // JPA의 기본 SQL메소드에 없는 쿼리요청은 네이티브 쿼리(@Query)를 사용
   @Query(value = "select * from product where product_type =:type order by product_create desc",nativeQuery = true)
     List<ProductEntity> findByProductTypeDesc(@Param("type") String productType);
   
@@ -121,9 +122,82 @@ public class MainController {
 <br><br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920404-c781c7f9-841e-4133-8b36-cf4771d25c51.png" style="width: 700px"></p> 
 <br>
-<p align="center"></p>
-<br><br>
-  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920405-ae4fd59e-befa-4dbf-8e6c-e8eabd8291bd.png" style="width: 700px"></p> 
+  <p align="center">자동재생 갤러리는 javascript를 이용하여 이미지 요소에 별도의 class를 설정한 뒤,</p>
+  <p align="center">일정한 시간간격으로 해당 class요소만 노출되도록 설정하였습니다.</p>
+  <br>
+  
+  ```html
+  <!-- 자동갤러리 -->
+        <div class="gallery">
+            <div class="con">
+                <div class="gallery-con">
+                    <ul>
+                        <li class="fadeLi"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="arrow-con">
+                    <span class="arrow left" id="arrow-left"></span>
+                    <span class="arrow right" id="arrow-right"></span>
+                </div>
+                <div class="item-con">
+                    <ul>
+                        <li class="on"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+  ```
+  
+  ```javascript
+  
+// 자동갤러리
+
+const galleryLi = document.querySelectorAll('.gallery-con>ul>li');
+const itemLi = document.querySelectorAll('.item-con>ul>li');
+
+let i = -1;
+
+function autoGallery(){
+  // i가 갤러리 이미지 총 갯수에 도달할 경우 시작번호(0)로 세팅
+  if(i>=galleryLi.length-1){
+    i=-1;
+  }
+  i++;
+
+  console.log(`i=>${i}`);
+
+  galleryLi.forEach((el,idx)=>{
+    if(i==idx){
+      el.classList.add('fadeLi');
+    } else {
+      el.classList.remove('fadeLi');
+    }
+  })
+
+  itemLi.forEach((el,idx)=>{
+    if(i==idx){
+      el.classList.add('on');
+    } else {
+      el.classList.remove('on');
+    }
+  })
+
+}
+// 3초마다 autoGallery 함수 실행
+let setIn = setInterval(autoGallery,3000);
+
+// 즉시실행 함수 (페이지 로드시 바로 실행)
+(function(){
+  autoGallery();
+})()
+  ```
+  
 <br>
 </details>
 
