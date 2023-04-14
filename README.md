@@ -30,26 +30,26 @@
 <details>
 <summary>상세보기</summary>
 <br>
-<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911826-6b80cac9-204b-4b83-bc09-93219e2d4330.png" style="width: 700px"></p> 
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911826-6b80cac9-204b-4b83-bc09-93219e2d4330.png" style="width: 700px"></p> 
 <br>
-<p align="center">프로젝트 형상관리를 위한 기본 저장소를 생성합니다.</p>
+  <p align="center">프로젝트 형상관리를 위한 기본 저장소를 생성합니다.</p>
 <br>
-<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911827-171bd537-dcbc-4725-8649-7f353c0f51a1.png" style="width: 700px"></p>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911827-171bd537-dcbc-4725-8649-7f353c0f51a1.png" style="width: 700px"></p>
 <br>
-<p align="center">팀원들을 collaborators 및 contributers로 지정하여 저장소에 대한 pull Request뿐만 아니라 직접적인 push, pull의 권한을 부여하였습니다.</p>
+  <p align="center">팀원들을 collaborators 및 contributers로 지정하여 저장소에 대한 pull Request뿐만 아니라 직접적인 push, pull의 권한을 부여하였습니다.</p>
 <br>
-<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911828-4e900412-9fbe-4cc9-ac49-a25946e82122.png" style="width: 700px"></p>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911828-4e900412-9fbe-4cc9-ac49-a25946e82122.png" style="width: 700px"></p>
 <br>
-<p align="center">프로젝트 저장소를 fork하여 팀원 각자가 복사한 저장소를 통해 담당 파트별 소스코드를 업데이트할 수 있도록 합니다.</p>
+  <p align="center">프로젝트 저장소를 fork하여 팀원 각자가 복사한 저장소를 통해 담당 파트별 소스코드를 업데이트할 수 있도록 합니다.</p>
 <br>
-<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911830-c32ffbdf-c60f-4204-af24-1d13cc0a5b91.png" style="width: 700px"></p>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911830-c32ffbdf-c60f-4204-af24-1d13cc0a5b91.png" style="width: 700px"></p>
 <br>
-<p align="center">특정 파트의 코드가 업데이트 되는대로 fork 저장소에서 프로젝트 저장소에 pull Request를 보냅니다.</p>
+  <p align="center">특정 파트의 코드가 업데이트 되는대로 fork 저장소에서 프로젝트 저장소에 pull Request를 보냅니다.</p>
 <br>
-<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911831-d6f95fbe-349c-4390-a33f-45c187e06bb3.png" style="width: 700px"></p>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911831-d6f95fbe-349c-4390-a33f-45c187e06bb3.png" style="width: 700px"></p>
 <br>
-<p align="center">pull request의 커밋 내역을 확인하여 confirm을 통해 해당 수정사항을 프로젝트 저장소의 소스와 merge한 뒤,</p>
-<p align="center">각자의 fork 저장소에서 최신화합니다.</p>
+  <p align="center">pull request의 커밋 내역을 확인하여 confirm을 통해 해당 수정사항을 프로젝트 저장소의 소스와 merge한 뒤,</p>
+  <p align="center">각자의 fork 저장소에서 최신화합니다.</p>
 <br>
 </details>
 
@@ -202,6 +202,40 @@ let setIn = setInterval(autoGallery,3000);
 </details>
 
 - 관리자 페이지(admin) 구현
+
+<details>
+<summary>상세보기</summary>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931082-9a431c7b-90bb-46a4-8295-9724ce6dbb60.png" style="width: 700px"></p> 
+<br>
+  <p align="center"></p>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931085-470763ad-3123-4f56-962a-ef5123cca064.png" style="width: 700px"></p>
+<br>
+  <p align="center"></p>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931087-11c4993a-7e01-4ee6-b9da-04aec28eb9ef.png" style="width: 700px"></p>
+<br>
+  <p align="center"></p>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931090-b6b29221-ee2a-4d6b-9ed1-31aed79c7764.png" style="width: 700px"></p>
+<br>
+  <p align="center"></p>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931092-0b4e3409-d2ca-4f64-aa8a-569291343fb4.png" style="width: 700px"></p>
+<br>
+  <p align="center"></p>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931093-ba97d146-aaea-4007-af57-6b185f907927.png" style="width: 700px"></p>
+<br>
+  <p align="center"></p>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931095-bb837310-ec66-45d0-ab5f-43b5da1335d6.png" style="width: 700px"></p>
+<br>
+  <p align="center"></p>
+<br>
+</details>
+
 - 공통요소(fragments) 디자인
 - 웹소켓, Stomp 기반 챗봇(chatbot) 구현 <br>
 
