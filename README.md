@@ -206,24 +206,24 @@ let setIn = setInterval(autoGallery,3000);
 - 웹소켓, Stomp 기반 챗봇(chatbot) 구현 <br>
 
 #### 👨‍💻팀원 : 김현기 <br>
-#### Controller : MemberController <br>
-#### Templates : login / signUp <br>
+#### `Controller` : MemberController <br>
+#### `Templates` : login / signUp <br>
 - 로그인(login), 회원가입(signUp) 구현
 - Naver Open API(workplace, work) 연동 <br>
 
 #### 👨‍💻팀원 : 김홍록 <br>
-#### Controller : ProductController / WishController <br>
-#### Templates : product <br>
+#### `Controller` : ProductController / WishController <br>
+#### `Templates` : product <br>
 - 상품상세 페이지(productDetail) CRUD, 상품검색 구현
 - 장바구니 추가 및 상품구매 구현 <br>
 
 #### 👨‍💻팀원 : 이정모 <br>
-#### Controller : MemberController / ProductController <br>
-#### Templates : member / wish <br>
+#### `Controller` : MemberController / ProductController <br>
+#### `Templates` : member / wish <br>
 - 회원상세 페이지(memberDetail), 장바구니 목록, 구매내역 CRUD 구현 <br>
 
 #### 👨‍💻팀원 : 장기운 <br>
-#### Controller : ProductController <br>
-#### Templates : product <br>
+#### `Controller` : ProductController <br>
+#### `Templates` : product <br>
 - 카테고리별 상품게시판 페이지(productList) 구현
 - Github Actions, AWS EC2 기반 CI/CD 구현 <br>
