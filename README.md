@@ -13,17 +13,17 @@
 - Github Actions와 AWS EC2를 기반으로 CI/CD(지속통합/지속배포) 환경을 구축하였습니다.
 
 ## ⚙️ 개발 환경
-- Language : Java 11, HTML5, CSS3, JavaScript
-- IDE : IntelliJ IDEA, Visual Studio Code
-- Framework : Springboot
-- Database : MySQL
-- Template Engine : Thymeleaf 
-- ORM : JPA <br>
+- `Language` : Java 11, HTML5, CSS3, JavaScript
+- `IDE` : IntelliJ IDEA, Visual Studio Code
+- `Framework` : Springboot
+- `Database` : MySQL
+- `Template Engine` : Thymeleaf 
+- `ORM` : JPA <br>
 
 ## 🧑‍🤝‍🧑 팀 구성 및 역할
 #### 👨‍💻팀장 : 김필수 <br>
-#### Controller : MainController / AdminController / ChatBotController <br>
-#### Templates : index / admin / fragments <br>
+#### `Controller` : MainController / AdminController / ChatBotController <br>
+#### `Templates` : index / admin / fragments <br>
 - 프로젝트 일정 관리 및 발표준비
 - 소스 통합 및 형상관리
 
@@ -55,14 +55,30 @@
 
 - 데이터 모델링 및 Entity, DTO 구현
 - 메인 페이지(index) 구현
+
 <details>
 <summary>상세보기</summary>
 <br>
-<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911826-6b80cac9-204b-4b83-bc09-93219e2d4330.png" style="width: 700px"></p> 
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920393-83d926e0-aeb1-47c1-b0cf-b46e6c4f4b3b.png" style="width: 700px"></p> 
 <br>
-<p align="center">프로젝트 형상관리를 위한 기본 저장소를 생성합니다.</p>
+  <p align="center"></p>
 <br><br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920398-99017e79-96b6-4673-85c5-0c9607140e1b.png" style="width: 700px"></p> 
+<br>
+  <p align="center"></p>
+<br><br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920403-83bef557-74d4-4fd5-b879-261b350d3e53.png" style="width: 700px"></p> 
+<br>
+<p align="center"></p>
+<br><br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920404-c781c7f9-841e-4133-8b36-cf4771d25c51.png" style="width: 700px"></p> 
+<br>
+<p align="center"></p>
+<br><br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231920405-ae4fd59e-befa-4dbf-8e6c-e8eabd8291bd.png" style="width: 700px"></p> 
+<br>
 </details>
+
 - 관리자 페이지(admin) 구현
 - 공통요소(fragments) 디자인
 - 웹소켓, Stomp 기반 챗봇(chatbot) 구현 <br>
