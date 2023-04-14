@@ -25,15 +25,45 @@
 #### Controller : MainController / AdminController / ChatBotController <br>
 #### Templates : index / admin / fragments <br>
 - 프로젝트 일정 관리 및 발표준비
+- 소스 통합 및 형상관리
 
 <details>
-<summary>소스 통합 및 형상관리</summary>
+<summary>상세보기</summary>
 <br>
-This is how you dropdown.
+<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911826-6b80cac9-204b-4b83-bc09-93219e2d4330.png" style="width: 700px"></p> 
+<br>
+<p align="center">프로젝트 형상관리를 위한 기본 저장소를 생성합니다.</p>
+<br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911827-171bd537-dcbc-4725-8649-7f353c0f51a1.png" style="width: 700px"></p>
+<br>
+<p align="center">팀원들을 collaborators 및 contributers로 지정하여 저장소에 대한 pull Request뿐만 아니라 직접적인 push, pull의 권한을 부여하였습니다.</p>
+<br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911828-4e900412-9fbe-4cc9-ac49-a25946e82122.png" style="width: 700px"></p>
+<br>
+<p align="center">프로젝트 저장소를 fork하여 팀원 각자가 복사한 저장소를 통해 담당 파트별 소스코드를 업데이트할 수 있도록 합니다.</p>
+<br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911830-c32ffbdf-c60f-4204-af24-1d13cc0a5b91.png" style="width: 700px"></p>
+<br>
+<p align="center">특정 파트의 코드가 업데이트 되는대로 fork 저장소에서 프로젝트 저장소에 pull Request를 보냅니다.</p>
+<br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911831-d6f95fbe-349c-4390-a33f-45c187e06bb3.png" style="width: 700px"></p>
+<br>
+<p align="center">pull request의 커밋 내역을 확인하여 confirm을 통해 해당 수정사항을 프로젝트 저장소의 소스와 merge한 뒤,</p>
+<p align="center">각자의 fork 저장소에서 최신화합니다.</p>
+<br><br>
 </details>
 
 - 데이터 모델링 및 Entity, DTO 구현
-- 메인 페이지(index), 관리자 페이지(admin) CRUD 구현
+- 메인 페이지(index) 구현
+<details>
+<summary>상세보기</summary>
+<br>
+<p align="center"><img src="https://user-images.githubusercontent.com/116870617/231911826-6b80cac9-204b-4b83-bc09-93219e2d4330.png" style="width: 700px"></p> 
+<br>
+<p align="center">프로젝트 형상관리를 위한 기본 저장소를 생성합니다.</p>
+<br><br>
+</details>
+- 관리자 페이지(admin) 구현
 - 공통요소(fragments) 디자인
 - 웹소켓, Stomp 기반 챗봇(chatbot) 구현 <br>
 
