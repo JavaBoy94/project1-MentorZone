@@ -4,7 +4,7 @@
 
 # MentorZone (멘토존)
 ## 쇼핑몰 &amp; 관리자 모드 기반 챗봇 구현 프로젝트 (2023.02.13 ~ 2023.03.13)
-## [프로젝트 소개 PDF](https://drive.google.com/file/d/1bpU7iVPnYZ2JlXM2T63D__F-oSB25bez/view?usp=share_link)
+## [프로젝트 소개 PDF(영상포함)](https://drive.google.com/file/d/1bpU7iVPnYZ2JlXM2T63D__F-oSB25bez/view?usp=share_link)
 
 ## 🖥️ 프로젝트 소개
 - 재능마켓 플랫폼(크몽)을 참고하여 만든 전자책(PDF) 판매 쇼핑몰입니다.
