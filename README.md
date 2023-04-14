@@ -25,7 +25,13 @@
 #### Controller : MainController / AdminController / ChatBotController <br>
 #### Templates : index / admin / fragments <br>
 - 프로젝트 일정 관리 및 발표준비
-- 소스 통합 및 형상관리
+
+<details>
+<summary>소스 통합 및 형상관리</summary>
+<br>
+This is how you dropdown.
+</details>
+
 - 데이터 모델링 및 Entity, DTO 구현
 - 메인 페이지(index), 관리자 페이지(admin) CRUD 구현
 - 공통요소(fragments) 디자인
