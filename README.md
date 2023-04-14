@@ -12,6 +12,14 @@
 - 기본적인 쇼핑몰 기능 외에 관리자 페이지와 챗봇 기능도 추가하였습니다.
 - Github Actions와 AWS EC2를 기반으로 CI/CD(지속통합/지속배포) 환경을 구축하였습니다.
 
+## ⚙️ 개발 환경
+- Language : Java 11, HTML5, CSS3, JavaScript
+- IDE : IntelliJ IDEA, Visual Studio Code
+- Framework : Springboot
+- Database : MySQL
+- Template Engine : Thymeleaf 
+- ORM : JPA <br>
+
 ## 🧑‍🤝‍🧑 팀 구성 및 역할
 #### 👨‍💻팀장 : 김필수 <br>
 #### Controller : MainController / AdminController / ChatBotController <br>
@@ -45,12 +53,3 @@
 #### Templates : product <br>
 - 카테고리별 상품게시판 페이지(productList) 구현
 - Github Actions, AWS EC2 기반 CI/CD 구현 <br>
-
-## ⚙️ 개발 환경
-- Language : Java 11, HTML5, CSS3, JavaScript
-- IDE : IntelliJ IDEA, Visual Studio Code
-- Framework : Springboot
-- Database : MySQL
-- Template Engine : Thymeleaf 
-- ORM : JPA <br>
-
