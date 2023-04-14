@@ -304,19 +304,63 @@ public class AdminController {
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931090-b6b29221-ee2a-4d6b-9ed1-31aed79c7764.png" style="width: 700px"></p>
 <br>
-  <p align="center"></p>
+  <p align="center">상세보기 클릭시 해당 회원의 상세정보와 찜(장바구니)목록, 구매내역, 회원수정, 회원삭제 등의 기능들을 구현하였습니다.</p>
+  
+  ```java
+   //  회원수정
+    @GetMapping("/memberUpdate/{id}")
+    public String memberUpdate(@PathVariable(value = "id") Long id, Model model) {
+        MemberDto memberDto = memberService.memberDetailDo(id);
+        model.addAttribute("memberDto", memberDto);
+        return "admin/adminMemberUpdate";
+    }
+
+    @PostMapping("/memberUpdate")
+    public String memberUpdateOk(@ModelAttribute MemberDto memberDto) {
+        System.out.println(memberDto.getUserId() + " << userId");
+        System.out.println(memberDto.getUserRole() + " << userRole");
+        int rs = memberService.memberUpdateDo(memberDto);
+        if (rs != 1) {
+            System.out.println("memberUpdate fail!");
+            return null;
+        }
+        return "redirect:/admin/memberDetail/" + memberDto.getUserId();
+    }
+
+    //  회원삭제
+    @GetMapping("/memberDelete/{id}")
+    public String memberDelete(@PathVariable(value = "id") Long id, Model model) {
+        MemberDto memberDto = memberService.memberDetailDo(id);
+        model.addAttribute("memberDto", memberDto);
+        return "admin/adminMemberDelete";
+    }
+
+    @PostMapping("/memberDelete")
+    public String memberDeleteOk(@RequestParam(value = "userId") Long id,
+                                 @RequestParam(value = "userPw") String pw) {
+
+        int rs = memberService.memberDeleteDo(id, pw);
+        if (rs != 1) {
+            System.out.println("memberDelete fail!");
+            return null;
+        }
+
+        return "redirect:/admin/memberList";
+    }
+  ```
+  
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931092-0b4e3409-d2ca-4f64-aa8a-569291343fb4.png" style="width: 700px"></p>
 <br>
-  <p align="center"></p>
+  <p align="center">상품관리에선 상품추가 기능을 추가하였으며, 모든 상품정보를 Page객체를 통해 불러오도록 하였습니다.</p>
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931093-ba97d146-aaea-4007-af57-6b185f907927.png" style="width: 700px"></p>
 <br>
-  <p align="center"></p>
+  <p align="center">상품상세 클릭시 해당 상품정보와 함께 상품수정, 상품삭제의 기능을 구현하였습니다.</p>
 <br>
   <p align="center"><img src="https://user-images.githubusercontent.com/116870617/231931095-bb837310-ec66-45d0-ab5f-43b5da1335d6.png" style="width: 700px"></p>
 <br>
-  <p align="center"></p>
+  <p align="center">주문관리 페이지에선 전체 주문내역을 불러왔으며, 주문내역의 상품명을 클릭시 해당 상품상세 페이지로 이동되도록 하였습니다.</p>
 <br>
 </details>
 
