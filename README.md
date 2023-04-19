@@ -56,6 +56,18 @@
 </details>
 
 - 데이터 모델링 및 Entity, DTO 구현
+<details>
+<summary>상세보기</summary>
+<br>
+  <p align="center"><img src="https://user-images.githubusercontent.com/116870617/232979615-1796b28a-dd01-4800-9a62-15d656c2b50b.png"></p> 
+<br>
+  <p align="center">회원(Member)과 상품(Product)을 중심으로 전체적인 테이블과 연관관계를 설정하였고,</p>
+  <p align="center">복수구매할 필요가 없는 전자책(PDF) 상품 특성상 모든 장바구니와 구매수량은 1로 고정하였습니다.</p>
+  <p align="center">회원 테이블의 이메일은 로그인시 ID로 사용되므로 unique로 설정하며, 권한부여를 위한 role 필드를 추가하였습니다.</p>
+  <p align="center">상품 테이블은 상품이미지를 담기 위한 별도의 이미지파일 테이블과 댓글 테이블을 생성하여 연관관계로 설정하였습니다.</p>
+<br>
+</details>
+
 - 메인 페이지(index) 구현
 
 <details>
