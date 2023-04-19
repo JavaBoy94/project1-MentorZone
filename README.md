@@ -23,7 +23,7 @@
 - `ORM` : JPA <br>
 
 ## 🧑‍🤝‍🧑 팀 구성 및 역할
-### 👨‍💻팀장 : 김필수 <br>
+### 팀장 : 김필수 <br>
 #### `Controller` : MainController / AdminController / ChatBotController <br>
 #### `Templates` : index / admin / fragments <br>
 - 프로젝트 일정 관리 및 발표준비
@@ -367,27 +367,9 @@ public class AdminController {
 </details>
 
 - 공통요소(fragments) 디자인
-- 웹소켓, Stomp 기반 챗봇(chatbot) 구현 <br>
+- 웹소켓, Stomp 기반 챗봇(chatbot) 구현 <br><br>
 
-#### 팀원 : 김** <br>
-#### `Controller` : MemberController <br>
-#### `Templates` : login / signUp <br>
-- 로그인(login), 회원가입(signUp) 구현
-- Naver Open API(workplace, work) 연동 <br>
-
-#### 팀원 : 김** <br>
-#### `Controller` : ProductController / WishController <br>
-#### `Templates` : product <br>
-- 상품상세 페이지(productDetail) CRUD, 상품검색 구현
-- 장바구니 추가 및 상품구매 구현 <br>
-
-#### 팀원 : 이** <br>
-#### `Controller` : MemberController / ProductController <br>
-#### `Templates` : member / wish <br>
-- 회원상세 페이지(memberDetail), 장바구니 목록, 구매내역 CRUD 구현 <br>
-
-#### 팀원 : 장** <br>
-#### `Controller` : ProductController <br>
-#### `Templates` : product <br>
-- 카테고리별 상품게시판 페이지(productList) 구현
-- Github Actions, AWS EC2 기반 CI/CD 구현 <br>
+#### 팀원 : 김** - 로그인/회원가입 구현, Naver Open API 연동 <br>
+#### 팀원 : 김** - 상품상세, 상품검색, 장바구니 구현 <br>
+#### 팀원 : 이** - 회원상세, 구매내역 구현 <br>
+#### 팀원 : 장** - 상품게시판, CI/CD 구현 <br>
